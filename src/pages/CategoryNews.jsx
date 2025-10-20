@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {useLoaderData, useParams} from 'react-router';
 
 const CategoryNews=()=>{
@@ -6,6 +6,10 @@ const CategoryNews=()=>{
 //   console.log(id);
   const data=useLoaderData();
 //   console.log(data);
+useEffect(()=>{
+  const filteredNews=data.filter(news=> news.category_id== id);
+  console.log(filteredNews)
+},[data,id])
     return(
        <div>
         CategoryNews-{id}
