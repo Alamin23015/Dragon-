@@ -6,7 +6,7 @@ const NewsCard = ({ news }) => {
   const { title, author, image_url, details, rating, total_view, tags } = news;
 
   return (
-    <div className="card bg-base-100 shadow-md rounded-2xl border">
+    <div className="card bg-base-100 shadow-md  mb-6 rounded-2xl ">
       {/* Header */}
       <div className="flex justify-between items-center p-4">
         <div className="flex items-center gap-3">
@@ -16,20 +16,20 @@ const NewsCard = ({ news }) => {
             className="w-10 h-10 rounded-full object-cover"
           />
           <div>
-            <h3 className="font-semibold text-sm">{author?.name}</h3>
+            <h3 className="font-semibold text-sm ">{author?.name}</h3>
             <p className="text-xs text-gray-500">
               {new Date(author?.published_date).toLocaleDateString()}
             </p>
           </div>
         </div>
-        <div className="flex gap-3 text-gray-600 text-lg">
+        <div className="flex gap-3 text-gray-600 text-lg underline">
           <BsBookmark className="cursor-pointer hover:text-primary" />
           <BsShare className="cursor-pointer hover:text-primary" />
         </div>
       </div>
 
       {/* Title */}
-      <h2 className="text-lg font-bold px-4">
+      <h2 className="text-lg font-bold px-4 hover:underline">
         {title}
       </h2>
 
